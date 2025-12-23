@@ -1128,11 +1128,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c66197ebfc01cab4f931400bf9ccc241, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 2
+  moveSpeed: 4
   jumpForce: 6
-  groundCheckRadius: 0.2
+  groundDamping: 0.1
+  coyoteTime: 0.2
+  jumpBufferTime: 0.2
+  fallMultiplier: 2.5
+  lowJumpMultiplier: 2
   groundCheck: {fileID: 2092202030}
-  groundMask:
+  groundCheckRadius: 0.2
+  groundLayer:
     serializedVersion: 2
     m_Bits: 64
 --- !u!1 &1949163638
