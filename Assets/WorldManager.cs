@@ -25,7 +25,7 @@ public class WorldManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             isRedActive = !isRedActive;
             UpdateWorldState();
@@ -34,16 +34,8 @@ public class WorldManager : MonoBehaviour
 
     void UpdateWorldState()
     {
-        if (isRedActive)
-        {
-            SetTilemapState(redTilemap, redCollider, true);
-            SetTilemapState(blueTilemap, blueCollider, false);
-        }
-        else
-        {
-            SetTilemapState(redTilemap, redCollider, false);
-            SetTilemapState(blueTilemap, blueCollider, true);
-        }
+        SetTilemapState(redTilemap, redCollider, isRedActive);
+        SetTilemapState(blueTilemap, blueCollider, !isRedActive);
     }
 
     void SetTilemapState(Tilemap tilemap, TilemapCollider2D tilemapCollider, bool isActive)
